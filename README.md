@@ -32,19 +32,20 @@ Problem 20 was also challenging because it combines two different conditions wit
 
 ### Gold Strings and Debugging
 
-Some strings helped me understand and debug the NFAs:
+Some strings helped me find mistakes and understand the NFAs better.
 
-- `110` for problem 7 showed that one branch can die while another path still accepts.
-- `101` for problem 11 helped confirm that reaching the accepting state too early should not accept the string.
-- `000111` for problem 11 showed how the NFA can keep scanning until it guesses the correct second-to-last `1`.
-- For problem 20, I tested strings that satisfied only one side of the OR and strings that satisfied neither condition.
+For problem 7, `110` helped me see that an NFA can have a branch die while another branch still accepts.
 
-These tests helped me find mistakes in my transitions and understand why each NFA worked.
+For problem 11, `101` and `000111` were useful for debugging. While drawing the computation tree for `000111`, I initially did not include every next state from `q0` when reading a `1`. I forgot that `q0` could both stay in `q0` and branch to `q1`.
+
+The mistake happened because I was following one path at a time instead of keeping track of the complete set of possible next states.
+
+In future state-machine problems, I can avoid this by checking every transition from every currently active state before moving to the next input symbol. This is important not only for NFAs, but also for future compiler, controller, and exam problems involving states.
 
 ### Insights and Questions
 
-The biggest thing I learned is that an NFA does not require every path to succeed. A string is accepted as long as at least one path consumes the full input and ends in an accepting state.
+Problem 11 gave me trouble because I had to understand how the NFA could guess which `1` was the second-to-last symbol.
 
-I also learned that epsilon transitions can be used to combine multiple NFAs, especially when the language uses an OR condition.
+Problem 20 was also challenging because it combines two different conditions using OR. I used epsilon transitions to separate the two conditions.
 
-Drawing computation trees helped me see the different paths more clearly and understand when branches die.
+I did not avoid any of the five problems I selected. I used AI to ask questions and get guidance when I was confused, especially while debugging computation trees and understanding nondeterministic branching.
