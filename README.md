@@ -8,7 +8,7 @@ This repository documents my process of designing, testing, debugging, and refle
 |---|---|---|
 | 6 | Strings that start with `10` | Completed |
 | 7 | Strings that end with `10` | Completed |
-| 9 | Strings that contain substring `10` | Not started |
+| 9 | Strings that contain substring `10` | Completed |
 | 11 | Strings whose second-to-last bit is `1` | Not started |
 | 20 | Strings with `3k+1` ones or an odd number of zeros | Not started |
 
